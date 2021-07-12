@@ -1,6 +1,3 @@
-// var tweets = ["WhatsApp cofounder: It's time to delete Facebook", 
-// "Shockingly awful work conditions","Food for thought",
-// "No one is born hating another person because of the color of his skin or his background or his religion..."];
 
 var tweets = [
     {
@@ -14,14 +11,14 @@ var tweets = [
         tweet :"Shockingly awful work conditions",
         username :"Mark",
         created_at : "02-31-2021",
-        age : 52
+        age : 17
     },
 
     {
         tweet :"No one is born hating another person because of the color of his skin or his background or his religion...",
         username :"Bilge",
         created_at : "08-08-2019",
-        age : 27
+        age : 12
     },
 
     {
@@ -49,7 +46,7 @@ var tweets = [
         tweet :"That troll you haven't blocked yet is probably evil. ",
         username :"Hannah",
         created_at : "01-09-2018",
-        age : 25
+        age : 16
     },
 
     {
@@ -63,7 +60,7 @@ var tweets = [
         tweet :"What happens when u wear a green tie on TV",
         username :"Jessie",
         created_at : "07-16-2019",
-        age : 35
+        age : 10
     },
     
 
@@ -75,11 +72,51 @@ var tweets = [
     },
 
 ];
-for (i=0; i < tweets.length; i++){
-console.log(tweets[i].tweet);
-console.log(tweets[i].username);
-console.log(tweets[i].created_at);
-// console.log(i);
-console.log("--------------------------------");
 
+
+
+// First Attempt
+
+function ageFinder (tweets) {
+        // var tweet = tweets[i];
+        var userAge = tweets.age;
+        if (userAge >= 18) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+for (i=0; i < tweets.length; i++){ 
+
+    console.log(ageFinder(tweets[i]));
 }
+
+    let newArray = tweets.filter(function(e){
+    return e.age >= 18;
+    });
+
+console.log(newArray);
+
+
+// Second Attempt
+
+function filterByAge(object) {
+    if (Number.isFinite(object.age) && object.age >= 18){
+        return true;
+    }else{
+        return false;}
+    }
+for (i=0; i<tweets.length; i++){
+
+    var result = filterByAge(tweets[i]);
+    console.log(result);
+}
+
+let arrByAge = tweets.filter(filterByAge);
+console.log(arrByAge);
+
+
+
+
+
