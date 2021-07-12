@@ -92,10 +92,11 @@ for (i=0; i < tweets.length; i++){
     console.log(ageFinder(tweets[i]));
 }
 
-    let newArray = tweets.filter(function(e){
-    return e.age >= 18;
-    });
+    // let newArray = tweets.filter(function(e){
+    // return e.age >= 18;
+    // })
 
+let newArray = tweets.filter(ageFinder);
 console.log(newArray);
 
 
